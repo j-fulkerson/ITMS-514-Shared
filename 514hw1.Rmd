@@ -3,6 +3,7 @@ title: "514 Lab 1"
 author: "Joseph Fulkerson, Julio Pagan"
 date: "Due Date 9/13"
 output: html_document
+        pdf_document: default
 ---
 
 ```{r message=FALSE}
