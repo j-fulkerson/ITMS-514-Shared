@@ -86,6 +86,7 @@ head(cars)
 
 > Type your answer here
 
+# @jpagan2 ______________________________________________________________
 <br> 
 
 #### (b) Calculate the average and standard deviation of `dist` 
