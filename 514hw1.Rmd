@@ -112,10 +112,10 @@ new_cars <- cars[cars$speed > speed_average,]
 print(new_cars)
 new_dist_average <- mean(new_cars$dist)
 new_standard_dev_dist <- sd(new_cars$dist)
-answer_dist <- print(paste("The average of dist with a speed greater than ", speed_average, " is ", new_dist_average, " and the standardd deviation is ", new_standard_dev_dist ))
+answer_dist <- print(paste("The average of dist with a speed greater than ", speed_average, " is ", new_dist_average, " and the standard deviation is ", new_standard_dev_dist ))
 ```
 
-> The standard deviation is  22.8496979334996
+> The average of dist with a speed greater than 15.4 is 59.75 and the standard deviation is 22.8496979334996
 
 <br> 
 
