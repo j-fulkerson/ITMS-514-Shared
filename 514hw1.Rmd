@@ -29,7 +29,7 @@ print("Hello world!")
 
 #### (a) Modify the code chunk below to print your name
 ```{r}
-# Edit me
+print("Julio Pagan, Joseph Fulkerson")
 ```
 
 <br>
@@ -54,17 +54,19 @@ seq(2,10,2) # Even numbers from 2 to 10
 
 #### (a) Use `:` to output the sequence of numbers from 3 to 12
 ```{r}
-# Edit me
+3:12
 ```
 
 #### (b) Use `seq()` to output the sequence of numbers from 3 to 30 in increments of 3
 ```{r}
-print("Hi")
+print(seq(3,30,3))
 ```
 
 #### (c) Save the sequence from (a) as a variable `x`, and the sequence from (b) as a variable `y`.  Output their product `x*y`
 ```{r}
-# Edit me
+x <- 3:12
+y <- seq(3,30,3)
+print(x*y)
 ```
 
 <br>
@@ -82,7 +84,9 @@ head(cars)
 #### (a) Calculate the average and standard deviation of `speed` 
 
 ```{r}
-# Edit me
+speed_average <- mean(cars$speed)
+speed_standard_deviation <- sd(cars$speed)
+speed_results <- print("The average of speed is " , average_speed , " and the standard deviation is " , standard_dev_speed)
 ```
 
 > Type your answer here
