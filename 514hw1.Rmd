@@ -102,7 +102,7 @@ standard_dev_dist <- sd(cars$dist)
 answer_dist <- print(paste("The average of dist is " , average_dist , " and the standard deviation is " , standard_dev_dist))
 ```
 
-> Type your answer here
+> The average of dist is 42.98 and the standard deviation is 25.7693774920259
 
 <br> 
 
