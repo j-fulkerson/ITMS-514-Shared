@@ -109,10 +109,13 @@ answer_dist <- print(paste("The average of dist is " , average_dist , " and the 
 #### (c) Calulate the average and standard deviation of `dist` when `speed`  is greater than the average. Compare the results with the answers in (b)
 
 ```{r}
-# Edit me
+new_cars <- cars[cars$speed > speed_average,]
+print(new_cars)
+standard_dev_dist <- sd(new_cars$dist)
+answer_dist <- print(paste("The standard deviation is " , standard_dev_dist))
 ```
 
-> Type your answer here
+> The standard deviation is  22.8496979334996
 
 <br> 
 
