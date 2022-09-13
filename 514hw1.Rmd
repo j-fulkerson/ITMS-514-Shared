@@ -84,9 +84,9 @@ head(cars)
 #### (a) Calculate the average and standard deviation of `speed` 
 
 ```{r}
-speed_average <- mean(cars$speed)
-speed_standard_deviation <- sd(cars$speed)
-speed_results <- print(paste("The average of speed is " , speed_average , " and the standard deviation is " , speed_standard_deviation))
+average_speed <- mean(cars$speed)
+standard_dev_speed <- sd(cars$speed)
+answer_speed <- print(paste("The average of speed is " , average_speed , " and the standard deviation is " , standard_dev_speed))
 ```
 
 > The average of speed is 15.4 and the standard deviation is 5.28764443523478
