@@ -97,7 +97,9 @@ speed_results <- print("The average of speed is " , average_speed , " and the st
 #### (b) Calculate the average and standard deviation of `dist` 
 
 ```{r}
-# Edit me
+average_dist <- mean(cars$dist)
+standard_dev_dist <- sd(cars$dist)
+answer_dist <- print(paste("The average of dist is " , average_dist , " and the standard deviation is " , standard_dev_dist))
 ```
 
 > Type your answer here
@@ -130,7 +132,7 @@ qplot(cars$dist,bins = 20)
 #### (d) Produce a histogram of speed using the `qplot` function with **5 bins**.
 
 ```{r}
-# Edit me
+qplot(cars$speed,bins = 5)
 ```
 
 The `qplot(x,y,...)` function can also be used to plot a vector `y` against a vector `x`.  You can type `?qplot` into the Console to learn more about the basic qplot function. 
@@ -138,12 +140,12 @@ The `qplot(x,y,...)` function can also be used to plot a vector `y` against a ve
 #### (e) Use the `qplot(x,y)` function to create a scatterplot of dist against speed.
 
 ```{r}
-# Edit me
+qplot(cars$dist,cars$speed)
 ```
 
 #### (f) Use the `boxplot` function to create a boxplot of speed.
 
 ```{r}
-# Edit me
+boxplot(cars$speed)
 ```
 
