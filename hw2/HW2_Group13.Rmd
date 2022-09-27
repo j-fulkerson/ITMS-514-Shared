@@ -154,9 +154,14 @@ barplot(table(winequalRed$quality))
 ```{r}
 winequalRedWithColumn <- transform(winequalRed, highlowqual=ifelse(quality > 5, 'high', 'low'))
 head(winequalRedWithColumn)
+mean(winequalRedWithColumn[winequalRedWithColumn$highlowqual == 'low', 'alcohol'])
+sd(winequalRedWithColumn[winequalRedWithColumn$highlowqual == 'low', 'alcohol'])
+mean(winequalRedWithColumn[winequalRedWithColumn$highlowqual == 'high', 'alcohol'])
+sd(winequalRedWithColumn[winequalRedWithColumn$highlowqual == 'high', 'alcohol'])
 ```
 
-> Type your answer here
+> The mean for low quality wine is 9.926478 and the standard deviation for low quality wine is 0.7580065.
+> The mean for high quality wine is 10.85503 and the standard deviation for high quality wine is 1.106109
 
 #### (g) Select any numeric attribute and show an overlay histogram of it with `highlowqual`. What conclusion can you draw from the plot? (10 points)
 
