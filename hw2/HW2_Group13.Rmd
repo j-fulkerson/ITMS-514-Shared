@@ -162,7 +162,11 @@ head(winequalRedWithColumn)
 
 
 ```{r}
-# Edit me
+
+layout(1:2)
+hist(winequalRedWithColumn[,2], main="Histogram of Volatile Acidity and Quality of Wine", 
+     xlab="Acidity and Highlowqual", col=rgb(1,0,0,.5), border=NA)
+hist(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
 ```
 
 > Type your answer here
