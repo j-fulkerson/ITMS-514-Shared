@@ -180,10 +180,7 @@ hist(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
 
 
 ```{r}
-layout(1:2)
-boxplot(winequalRedWithColumn[,2], main="Histogram of Volatile Acidity and Quality of Wine", 
-     xlab="Acidity and Highlowqual", col=rgb(1,0,0,.5), border=NA)
-boxplot(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
+boxplot(winequalRedWithColumn$density~winequalRedWithColumn$highlowqual);
 ```
 
 > Type your answer here
