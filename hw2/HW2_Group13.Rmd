@@ -146,7 +146,7 @@ head(winequalRedDePH)
 barplot(table(winequalRed$quality))
 ```
 
-> Type your answer here
+> Most have a quality of 5 & 6 
 
 
 #### (f) Create a new dataframe of the wine data set with a new column `highlowqual` with `low` when `quality` $\le 5$ and `high` when `quality` > 5. Find the mean and standard deviation for the attributes `alcohol` for the two classes. Based on the statistical information, describe if there exists difference for `alcohol` between the low quality and high quality red wines. (15 points)
