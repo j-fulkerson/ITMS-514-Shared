@@ -1,0 +1,164 @@
+---
+title: "514 Lab 2"
+author: "Julio Pagan, Joseph Fulkerson"
+date: "Due Date 9/27"
+output: html_document
+---
+
+```{r message=FALSE}
+# Import needed packages
+library(ggplot2) 
+```
+
+
+### 1. Changing the author field and file name. (5 points)
+
+##### (a) Change the `author:` field on the Rmd document 
+
+##### (b) Rename this file to "HW2_YourGroupNumberHere.Rmd", where YourGroupNumberHere is changed to your group number (e.g. Group1).
+
+### 2. Measure of location and variability (20 points)
+
+A certain polymer is used for evacuation systems for aircraft. It is important that the polymer be resistant to the aging process. Twenty specimens of the polymer were used in an experiment. Ten were assigned randomly to be exposed to an accelerated batch aging process that involved exposure to high temperatures for 10 days. Measurements of tensile strength of
+the specimens were made, and the following data were
+recorded on tensile strength in psi:
+
+```
+No aging: 227 222 218 216 218 217 225 229 228 221
+Aging: 219 214 218 203 215 211 209 204 201 205 
+```
+
+```{r}
+# You can use the following code to create a data frame
+strength = c( 227 ,222, 218, 216, 218, 217, 225, 229, 228,221,219,214,218,203,215,211,209,204,201,205)
+aging<-as.factor(c(rep(0,10),rep(1,10)))
+polymerData<-data.frame(strength,aging)
+```
+
+#### (a) Calculate the sample mean tensile strength of the two samples. (5 points)
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+#### (b) Calculate the median for both. Discuss your observation with the mean and median of each group. (5 points)
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+#### (c) Calculate the sample variance as well as standard deviation in tensile strength for both samples. (5 points)
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+#### (d) Does there appear to be any evidence that aging affects the variability in tensile strength? (5 points)
+
+> Type your answer here
+
+<br> 
+
+
+### 3.Normal Distribution with `qnorm` (15 points)
+
+#### (a) Please use `qnorm` to find the critical values $z_{0.025}$. (5 points)
+
+```{r}
+# Edit me
+```
+
+#### (b) Please use `qnorm` to find the critical values $z_{0.005}$. (5 points)
+
+```{r}
+# Edit me
+```
+
+#### (c) Which value is larger? Why? (5 points)
+
+> Type your answer here
+
+### 4. Working With Data (60 points)
+
+* [Obtaining the wine quality  dataset](http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/)
+
+#### (a) Import the `winequality-red` data set and name it `winequalRed`. (5 points)
+
+```
+# here is a hint for the r version 
+# -- change these commands as needed and delete these comments before submitting your work -- 
+# if you downloaded the data set as a .csv file then you can read it in as follows: 
+# winequalRed <- read.csv("~/Documents/datasets/winequality-red.csv", sep=";")
+# To view the data set
+#   View(winequalRed)
+```
+
+
+```{r}
+# Edit me
+```
+
+#### (b) Create a table of the  `quality` and `alcohol` attributes from the `winequalRed` data set. (5 points)
+
+Do not save the output from the code.
+```
+# hint: if you have two data columns named X and Y in your data frame, you can use code like this to create  a table: 
+table(my.data.set$X, my.data.set$Y)
+```
+
+```{r}
+# Edit me
+```
+
+#### (c) Save the first twenty records of the `winequalRed` data set as a data frame with name `winequalRed20Rec` and show summary of it. (5 points)
+
+```{r}
+# Edit me
+```
+
+#### (d)  Save the `density` and `pH` records of the `winequalRed` data set as as a data frame with name `winequalRedDePH` and show summary of it. (5 points)
+
+```{r}
+# Edit me
+```
+
+#### (e) Use `barplot` to investigate `quality` attribute. Show your result. (5 points)
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+
+#### (f) Create a new dataframe of the wine data set with a new column `highlowqual` with `low` when `quality` $\le 5$ and `high` when `quality` > 5. Find the mean and standard deviation for the attributes `alcohol` for the two classes. Based on the statistical information, describe if there exists difference for `alcohol` between the low quality and high quality red wines. (15 points)
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+#### (g) Select any numeric attribute and show an overlay histogram of it with `highlowqual`. What conclusion can you draw from the plot? (10 points)
+
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
+
+#### (h) Select any numeric attribute and show an overlay boxplot of it with a `highlowqual`. What conclusion can you draw from the plot? (10 points)
+
+
+```{r}
+# Edit me
+```
+
+> Type your answer here
