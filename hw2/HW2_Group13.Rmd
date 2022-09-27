@@ -38,30 +38,39 @@ polymerData<-data.frame(strength,aging)
 #### (a) Calculate the sample mean tensile strength of the two samples. (5 points)
 
 ```{r}
-# Edit me
+mean(polymerData$strength[polymerData$aging==0])
+mean(polymerData$strength[polymerData$aging==1])
 ```
 
-> Type your answer here
-
+> Sample mean of sample with no aging:  222.1 
+> Sample mean of sample with aging:     209.9
 #### (b) Calculate the median for both. Discuss your observation with the mean and median of each group. (5 points)
 
 ```{r}
-# Edit me
+median(polymerData$strength[polymerData$aging==0])
+median(polymerData$strength[polymerData$aging==1])
 ```
 
-> Type your answer here
+> Median of sample with no aging:   221.5
+> Median of sample with aging:      210
 
 #### (c) Calculate the sample variance as well as standard deviation in tensile strength for both samples. (5 points)
 
 ```{r}
-# Edit me
+var(polymerData$strength[polymerData$aging==0])
+sd(polymerData$strength[polymerData$aging==0])
+var(polymerData$strength[polymerData$aging==1])
+sd(polymerData$strength[polymerData$aging==1])
 ```
 
-> Type your answer here
+> Sample variance of sample with no aging:          23.65556
+> Sample standard dev. of sample with no aging:     4.863698
+> Sample variance of sample with  aging:            42.1
+> Sample standard dev. of sample with aging:        6.488451
 
 #### (d) Does there appear to be any evidence that aging affects the variability in tensile strength? (5 points)
 
-> Type your answer here
+> Yes, the group that ages has an increased variation
 
 <br> 
 
@@ -71,18 +80,18 @@ polymerData<-data.frame(strength,aging)
 #### (a) Please use `qnorm` to find the critical values $z_{0.025}$. (5 points)
 
 ```{r}
-# Edit me
+qnorm(1-0.025)
 ```
 
 #### (b) Please use `qnorm` to find the critical values $z_{0.005}$. (5 points)
 
 ```{r}
-# Edit me
+qnorm(1-0.005)
 ```
 
 #### (c) Which value is larger? Why? (5 points)
 
-> Type your answer here
+> $z_{0.005}$ is larger at 2.575829 while the `qnorm` for $z_{0.025}$ is 1.959964
 
 ### 4. Working With Data (60 points)
 
@@ -101,7 +110,8 @@ polymerData<-data.frame(strength,aging)
 
 
 ```{r}
-# Edit me
+winequalRed <-read.csv("hw2/winequality-red.csv", sep=";")
+head(winequalRed)
 ```
 
 #### (b) Create a table of the  `quality` and `alcohol` attributes from the `winequalRed` data set. (5 points)
@@ -113,25 +123,27 @@ table(my.data.set$X, my.data.set$Y)
 ```
 
 ```{r}
-# Edit me
+table(winequalRed$quality,winequalRed$alcohol)
 ```
 
 #### (c) Save the first twenty records of the `winequalRed` data set as a data frame with name `winequalRed20Rec` and show summary of it. (5 points)
 
 ```{r}
-# Edit me
+winequalRed20Rec<-as.data.frame(winequalRed[1:20])
+head(winequalRed20Rec)
 ```
 
 #### (d)  Save the `density` and `pH` records of the `winequalRed` data set as as a data frame with name `winequalRedDePH` and show summary of it. (5 points)
 
 ```{r}
-# Edit me
+winequalRedDePH <-as.data.frame(winequalRed[,8:9])
+head(winequalRedDePH)
 ```
 
 #### (e) Use `barplot` to investigate `quality` attribute. Show your result. (5 points)
 
 ```{r}
-# Edit me
+barplot(table(winequalRed$quality))
 ```
 
 > Type your answer here
