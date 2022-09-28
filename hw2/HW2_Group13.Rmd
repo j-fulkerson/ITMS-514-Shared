@@ -2,7 +2,9 @@
 title: "514 Lab 2"
 author: "Julio Pagan, Joseph Fulkerson"
 date: "Due Date 9/27"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r message=FALSE}
@@ -110,7 +112,7 @@ qnorm(1-0.005)
 
 
 ```{r}
-winequalRed <-read.csv("hw2/winequality-red.csv", sep=";")
+winequalRed <-read.csv("winequality-red.csv", sep=";")
 head(winequalRed)
 ```
 
@@ -129,7 +131,7 @@ table(winequalRed$quality,winequalRed$alcohol)
 #### (c) Save the first twenty records of the `winequalRed` data set as a data frame with name `winequalRed20Rec` and show summary of it. (5 points)
 
 ```{r}
-winequalRed20Rec<-as.data.frame(winequalRed[1:20])
+winequalRed20Rec<-as.data.frame(winequalRed[1:20,])
 head(winequalRed20Rec)
 ```
 
