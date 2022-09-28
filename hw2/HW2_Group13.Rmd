@@ -174,7 +174,7 @@ hist(winequalRedWithColumn[,2], main="Histogram of Volatile Acidity and Quality 
 hist(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
 ```
 
-> Type your answer here
+> We can see the distribution of acidic levels
 
 #### (h) Select any numeric attribute and show an overlay boxplot of it with a `highlowqual`. What conclusion can you draw from the plot? (10 points)
 
@@ -183,4 +183,4 @@ hist(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
 boxplot(winequalRedWithColumn$density~winequalRedWithColumn$highlowqual);
 ```
 
-> Type your answer here
+> High quality wine covers a higher range of density vs low quuality wine that has a more narrow range of density
