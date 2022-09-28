@@ -180,7 +180,7 @@ hist(winequalRedWithColumn[,10],col=rgb(0,0,1,.5), border=NA, add=TRUE)
 
 
 ```{r}
-boxplot(winequalRedWithColumn$density~winequalRedWithColumn$highlowqual);
+boxplot(winequalRedWithColumn$density~winequalRedWithColumn$highlowqual)
 ```
 
 > High quality wine covers a higher range of density vs low quuality wine that has a more narrow range of density
