@@ -1,0 +1,206 @@
+---
+title: "514 Lab 3"
+author: "Your Name Here"
+date: "Due Date 10/13"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,comment = '', fig.width = 3, fig.height = 3
+  )
+```
+
+
+# Setup
+
+
+### Changing the author field and file name.
+
+##### (a) Change the `author:` field on the Rmd document 
+
+##### (b) Rename this file to "HW3_YourGroupNumberHere.Rmd", where YourGroupNumberHere is changed to your group number (e.g. Group1).
+
+# Cleanup 
+Once you are done with this setup, updating the author and date fields, **delete** the *Setup* and the *Cleanup* sections of this document! 
+
+#### Note: 5 points for `Setup` and `Cleanup`
+
+##  Packages
+
+```{r message=FALSE}
+# add packages you need for this assignment
+library(tidyverse) 
+library(tigerstats)
+```
+
+
+----- 
+
+
+## How to work with this document
+
+There are several ways to format your answer, but whatever you do, please make sure it is *readable* by a human and clean. That is, don't leave stray comments and commented instructions in your submitted work. You may use a quote code `>` to start your answer after any r/python code chunks you are typing. An example is provided in the first question below. 
+
+----- 
+
+# Part ONE: Multiple Choice and TRUE/FALSE (15 points)
+
+
+### Question 1: (3 points) To find a confidence interval on population mean *when population variance is known*, which of the following should we use? 
+(In this part, suppose X_1, ... , X_1000 is a random sample (of size 1000) from some **unknown** distribution.)
+
+  A. The normal distribution (with the Z statistic)
+  
+  B. The normal distribution (with the Z statistic), but ONLY if X comes from a normal distribution
+  
+  C. The t-distribution (with the T statistic)
+  
+  D. The t-distribution (with the T statistic), but ONLY if X comes from a normal distribution 
+
+> Your answer:
+
+### Question 2: (3 points) To find a confidence interval on population mean *when population variance is unknown*, which of the following should we use? 
+(In this part, suppose X_1, ... , X_1000 is a random sample (of size 1000) from some unknown distribution.)
+
+  A. The normal distribution (with the Z statistic)
+  
+  B. The normal distribution (with the Z statistic), but ONLY if X comes from a normal distribution
+  
+  C. The t-distribution (with the T statistic)
+  
+  D. The t-distribution (with the T statistic), but ONLY if  X comes from a normal distribution
+
+> Your answer:
+
+
+### Question 3: A summary of one numerical variable is as follows. Which of the following are TRUE/FALSE? **Explain it.** (9 points, 3 points each question)
+
+```{r,echo = FALSE}
+summary(iris$Sepal.Length)
+```
+
+   A. 50% values of this variable are greater than  `r mean(iris$Sepal.Length)`. 
+   
+> Your answer:
+
+
+   B. The middle 50% values of this variable between approximately `r quantile(iris$Sepal.Length)[2]` and  `r quantile(iris$Sepal.Length)[4]`. 
+
+> Your answer:
+
+
+   C. The smallest value of this varaible is `r min(iris$Sepal.Length)` and the largest value is `r max(iris$Sepal.Length)`. 
+   
+> Your answer:
+
+
+# Part Two: Construct Confidence Interval (30 points)
+
+**Pro-tip**: You may use either R or Python or hand-calculations to answer the computational part of this question, however, you do need to--in any case--explain and justify your answer. 
+
+
+### Problem 1. An electrical firm manufactures light bulbs that have a length of life that is approximately normally distributed, with mean equal to 800 hours and a standard deviation of 40 hours. A random sample of 16 bulbs will have an average life of less than 775 hours. (15 points)
+
+#### a. Give a probabilistic result that indicates how rare an event $\bar{X} \leq 775$ is when $\mu= 800$. (Hint: Calculate the probability $P(\bar{X} \le 775)$ when $\mu = 800$). On the other hand, how rare would it be if $\mu$ truly were, say, 760 hours?
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+#### b. Please construct a 95% confidence interval on $\mu$ with $\bar{X} = 775$. Is 800 inside the interval?
+
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+
+### Problem 2. A maker of a certain brand of low-fat cereal bars claims that the average saturated fat content is 0.5 gram. In a random sample of 8 cereal bars of this brand, the saturated fat content was 0.6, 0.7, 0.7, 0.3, 0.4, 0.5, 0.4, and 0.2. *Assume a normal distribution*. (15 points)
+
+#### a. Please construct a 95% confidence interval on the average saturated fat content.
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+#### b. Would you agree with the claim? Justify your answer.
+
+> Your Answer
+
+
+
+# Part Three: More EDA Practice (50 points)
+
+### Instructions: Please review EDA Handout first. Import the needed packages first.
+
+* [Obtaining the adult dataset](http://archive.ics.uci.edu/ml/machine-learning-databases/adult/)
+
+### Tasks
+
+For the following exercises, work with the `adult.data` data set. Use either `Python` or `R` to solve each
+problem. Please read the `adult.name` file to understand each attribute.
+
+
+#### a. Import the `adult.data` data set and name it `adult`. (5 points)
+
+```{r}
+# Edit me
+```
+
+
+#### b. Standardize `hours-per-week` and indicate if there is any outlier (5 points)
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+
+#### c. Show a bar graph of `race` with a response `class` overlay. What conclusion can you draw from the bar graph? (10 points)
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+#### d. Select any numeric attribute and show a histogram of it with a response `class` overlay. What conclusion can you draw from the histogram? (10 points)
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+#### e. Select any two attributes and show a plot, what conclusion can you draw from the plot? (10 points)
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
+#### f. Select any three attributes and plot their relationship using 2D scatter plot, use one of the selected attributes as the color code when plotting, what can you say about the correlation of these attributes?  What conclusion can you draw from the plot? (10 points)
+
+```{r}
+# Edit me
+```
+
+> Your Answer
+
+
