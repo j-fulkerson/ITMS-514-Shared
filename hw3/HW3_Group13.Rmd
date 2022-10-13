@@ -1,6 +1,6 @@
 ---
 title: "514 Lab 3"
-author: "Your Name Here"
+author: "Julio Pagan, Joseph Fulkerson"
 date: "Due Date 10/13"
 output: html_document
 ---
@@ -13,19 +13,6 @@ knitr::opts_chunk$set(
 ```
 
 
-# Setup
-
-
-### Changing the author field and file name.
-
-##### (a) Change the `author:` field on the Rmd document 
-
-##### (b) Rename this file to "HW3_YourGroupNumberHere.Rmd", where YourGroupNumberHere is changed to your group number (e.g. Group1).
-
-# Cleanup 
-Once you are done with this setup, updating the author and date fields, **delete** the *Setup* and the *Cleanup* sections of this document! 
-
-#### Note: 5 points for `Setup` and `Cleanup`
 
 ##  Packages
 
@@ -59,7 +46,7 @@ There are several ways to format your answer, but whatever you do, please make s
   
   D. The t-distribution (with the T statistic), but ONLY if X comes from a normal distribution 
 
-> Your answer:
+> Group13 answer: A
 
 ### Question 2: (3 points) To find a confidence interval on population mean *when population variance is unknown*, which of the following should we use? 
 (In this part, suppose X_1, ... , X_1000 is a random sample (of size 1000) from some unknown distribution.)
@@ -72,7 +59,7 @@ There are several ways to format your answer, but whatever you do, please make s
   
   D. The t-distribution (with the T statistic), but ONLY if  X comes from a normal distribution
 
-> Your answer:
+> Group13 answer: D
 
 
 ### Question 3: A summary of one numerical variable is as follows. Which of the following are TRUE/FALSE? **Explain it.** (9 points, 3 points each question)
@@ -106,19 +93,29 @@ summary(iris$Sepal.Length)
 #### a. Give a probabilistic result that indicates how rare an event $\bar{X} \leq 775$ is when $\mu= 800$. (Hint: Calculate the probability $P(\bar{X} \le 775)$ when $\mu = 800$). On the other hand, how rare would it be if $\mu$ truly were, say, 760 hours?
 
 ```{r}
-# Edit me
+pnormGC(775, mean = 800, sd = 40/sqrt(16), graph = TRUE)
+pnormGC(775, mean = 760, sd = 40/sqrt(16), graph = TRUE)
 ```
 
-> Your Answer
+> Group13 answer: By Central Limit Theory, we know when n is large. Based on the sample, it is more likely that $\mu$ would be 760 instead of 800
 
 #### b. Please construct a 95% confidence interval on $\mu$ with $\bar{X} = 775$. Is 800 inside the interval?
 
 
 ```{r}
-# Edit me
+interval <- 0.05
+qnormed <- qnorm(1 - alpha / 2)
+sd <- 40
+n <- 16
+x_bar <- 775
+lo_bd <- x_bar - qnormed * sd / sqrt(n)
+lo_bd
+
+up_bd <- x_bar + qnormed * sd / sqrt(n)
+up_bd
 ```
 
-> Your Answer
+> Group13 answer: 800 is not inside an interval of 95% confidence
 
 
 
@@ -127,15 +124,22 @@ summary(iris$Sepal.Length)
 #### a. Please construct a 95% confidence interval on the average saturated fat content.
 
 ```{r}
-# Edit me
+sat_fat <- c(0.6, 0.7, 0.7, 0.3, 0.4, 0.5, 0.4, 0.2)
+t.test(sat_fat, alternative = c("two.sided"), mu = 0.5, conf.level = 0.95)
 ```
 
-> Your Answer
+```
+data: sat_fat
+Mean of sample data acquired: 0.475
+t = -0.38592, df = 7, p-value = 0.711
+for claim to be false, the true mean cannot be equal to 0.5
+95% confidence interval is 0.32182 to 0.62818
+```
 
 
 #### b. Would you agree with the claim? Justify your answer.
 
-> Your Answer
+> Group13 answer: Usint a t-Test, we conclude that we should not reject the claim because the p value is much larger than 0.05 and the 95% confidence interval is (0.32182, 0.6818) with the sample average  being 0.475 
 
 
 
