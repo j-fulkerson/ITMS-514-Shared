@@ -188,33 +188,46 @@ ggplot(data = adult, mapping = aes(x = race, fill = `class(response)`)) +
   geom_bar(position = "fill")
 ```
 
-> Whithout `fill`, `white` race attribute dominates. Using `fill` we can see that the percentage of `>50k` in `Asian-Pac-Islander` is closer to the distribution of the `white` race. The `other` category has the most scewed ratio with the least % of `>50k`
+> Whithout `fill`, `white` race attribute dominates. Using `fill` we can see that the percentage of `>50K` in `Asian-Pac-Islander` is closer to the distribution of the `white` race. The `other` category has the most scewed ratio with the least % of `>50K`
 
 
 #### d. Select any numeric attribute and show a histogram of it with a response `class` overlay. What conclusion can you draw from the histogram? (10 points)
 
 ```{r}
-# Edit me
+ggplot(data = adult,
+  mapping = aes(x = `hours-per-week`, fill = `class(response)`)) +
+  geom_histogram(binwidth = 10)
+
+ggplot(data = adult,
+  mapping = aes(x = `hours-per-week`, fill = `class(response)`)) +
+  geom_histogram(binwidth = 10, color = "black", position = "fill")
+
 ```
 
-> Your Answer
+> Group 13 answer: Histogram of `hours-per-week` shows that the mayority of adults work aprox. 40 hours per week. Using `fill` we can see the ratio of adults earning `<=50` or `>50K` which shows that most of the adults making `>50K` work over 40 hours per week. Only a minority are able to earn `>50k` by working less than 35 hours per week.
 
 
 #### e. Select any two attributes and show a plot, what conclusion can you draw from the plot? (10 points)
 
 ```{r}
-# Edit me
+ggplot(data = adult, mapping = aes(x = `sex`, fill = `class(response)`)) + 
+  geom_bar()
+
+ggplot(data = adult, mapping = aes(x = `sex`, fill = `class(response)`)) + 
+  geom_bar(position = "fill")
 ```
 
-> Your Answer
+> Group13 answer: After analyzing a plot of `class` and `sex` we can conclude that there are significally more adult men in the class of `>50k` in comparisson to females.
 
 
 #### f. Select any three attributes and plot their relationship using 2D scatter plot, use one of the selected attributes as the color code when plotting, what can you say about the correlation of these attributes?  What conclusion can you draw from the plot? (10 points)
 
 ```{r}
-# Edit me
+ggplot(data = adult) +
+  geom_point(mapping = aes(x = age, y = `hours-per-week`,
+  colour = `class(response)`))
 ```
 
-> Your Answer
+> Using `age` and `hours-per-week` as the main attributes in the scatterplot, color coded according to their `class` attribute, we conclude that most people in the class of `>50k` are within an approximate age range of 33 and 65
 
 
