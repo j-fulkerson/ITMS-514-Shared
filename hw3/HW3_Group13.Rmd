@@ -158,27 +158,37 @@ problem. Please read the `adult.name` file to understand each attribute.
 #### a. Import the `adult.data` data set and name it `adult`. (5 points)
 
 ```{r}
-# Edit me
+setwd(getwd())
+adult <- read.csv("adult.data", sep = ",")
 ```
 
 
 #### b. Standardize `hours-per-week` and indicate if there is any outlier (5 points)
 
 ```{r}
-# Edit me
+hrs_per_wk <- scale(adult$`hours-per-week`)
+outliers <- adult[hrs_per_wk < -3 | hrs_per_wk > 3,]
+#too many outliers, just show the first six records
+head(outliers)
+boxplot(adult$`hours-per-week`)
 ```
 
-> Your Answer
+> There are a a lot of outliers based on the hours-per-week
 
 
 
 #### c. Show a bar graph of `race` with a response `class` overlay. What conclusion can you draw from the bar graph? (10 points)
 
 ```{r}
-# Edit me
+table(adult$race, adult$`class(response)`)
+ggplot(data = adult, mapping = aes(x = race, fill = `class(response)`)) +
+  geom_bar()
+
+ggplot(data = adult, mapping = aes(x = race, fill = `class(response)`)) +
+  geom_bar(position = "fill")
 ```
 
-> Your Answer
+> Whithout `fill`, `white` race attribute dominates. Using `fill` we can see that the percentage of `>50k` in `Asian-Pac-Islander` is closer to the distribution of the `white` race. The `other` category has the most scewed ratio with the least % of `>50k`
 
 
 #### d. Select any numeric attribute and show a histogram of it with a response `class` overlay. What conclusion can you draw from the histogram? (10 points)
