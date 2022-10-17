@@ -70,17 +70,17 @@ summary(iris$Sepal.Length)
 
    A. 50% values of this variable are greater than  `r mean(iris$Sepal.Length)`. 
    
-> Your answer:
+> Group13 answer: FALSE (50% of the values are greater than the `median` NOT the `mean`)
 
 
    B. The middle 50% values of this variable between approximately `r quantile(iris$Sepal.Length)[2]` and  `r quantile(iris$Sepal.Length)[4]`. 
 
-> Your answer:
+> Group13 answer: 
 
 
    C. The smallest value of this varaible is `r min(iris$Sepal.Length)` and the largest value is `r max(iris$Sepal.Length)`. 
    
-> Your answer:
+> Group13 answer: TRUE (`min` returns the smallest value and `max` returns the largest value)
 
 
 # Part Two: Construct Confidence Interval (30 points)
@@ -165,7 +165,7 @@ head(outliers)
 boxplot(adult$`hours-per-week`)
 ```
 
-> There are a a lot of outliers based on the hours-per-week
+> Group13 answer: There are a a lot of outliers based on the hours-per-week
 
 
 
@@ -180,7 +180,7 @@ ggplot(data = adult, mapping = aes(x = race, fill = `class(response)`)) +
   geom_bar(position = "fill")
 ```
 
-> Whithout `fill`, `white` race attribute dominates. Using `fill` we can see that the percentage of `>50K` in `Asian-Pac-Islander` is closer to the distribution of the `white` race. The `other` category has the most scewed ratio with the least % of `>50K`
+> Group13 answer: Whithout `fill`, `white` race attribute dominates. Using `fill` we can see that the percentage of `>50K` in `Asian-Pac-Islander` is closer to the distribution of the `white` race. The `other` category has the most scewed ratio with the least % of `>50K`
 
 
 #### d. Select any numeric attribute and show a histogram of it with a response `class` overlay. What conclusion can you draw from the histogram? (10 points)
@@ -220,6 +220,6 @@ ggplot(data = adult) +
   colour = `class(response)`))
 ```
 
-> Using `age` and `hours-per-week` as the main attributes in the scatterplot, color coded according to their `class` attribute, we conclude that most people in the class of `>50k` are within an approximate age range of 33 and 65
+> Group13 answer: Using `age` and `hours-per-week` as the main attributes in the scatterplot, color coded according to their `class` attribute, we conclude that most people in the class of `>50k` are within an approximate age range of 33 and 65
 
 
