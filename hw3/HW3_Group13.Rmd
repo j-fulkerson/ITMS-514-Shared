@@ -104,7 +104,7 @@ pnormGC(775, mean = 760, sd = 40/sqrt(16), graph = TRUE)
 
 ```{r}
 interval <- 0.05
-qnormed <- qnorm(1 - alpha / 2)
+qnormed <- qnorm(1 - interval / 2)
 sd <- 40
 n <- 16
 x_bar <- 775
