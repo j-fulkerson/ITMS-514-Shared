@@ -158,6 +158,10 @@ adult <- read.csv("adult.data", sep = ",")
 #### b. Standardize `hours-per-week` and indicate if there is any outlier (5 points)
 
 ```{r}
+names(adult)[1:15] <- c("age","workclass", "fnlwgt", 
+  "education","education-num","marital-status","occupation",
+  "relationship","race","sex","capital-gain","capital-loss","hours-per-week",
+  "native-country","class(response)")
 hrs_per_wk <- scale(adult$`hours-per-week`)
 outliers <- adult[hrs_per_wk < -3 | hrs_per_wk > 3,]
 #too many outliers, just show the first six records
