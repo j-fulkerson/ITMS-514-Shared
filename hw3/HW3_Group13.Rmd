@@ -2,7 +2,9 @@
 title: "514 Lab 3"
 author: "Julio Pagan, Joseph Fulkerson"
 date: "Due Date 10/13"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 
