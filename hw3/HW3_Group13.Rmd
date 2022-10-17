@@ -75,7 +75,7 @@ summary(iris$Sepal.Length)
 
    B. The middle 50% values of this variable between approximately `r quantile(iris$Sepal.Length)[2]` and  `r quantile(iris$Sepal.Length)[4]`. 
 
-> Group13 answer: 
+> Group13 answer: TRUE (%50 of the middle variable is greater than the median of `r quantile(iris$Sepal.Length)[2]` and  `r quantile(iris$Sepal.Length)[4]`)
 
 
    C. The smallest value of this varaible is `r min(iris$Sepal.Length)` and the largest value is `r max(iris$Sepal.Length)`. 
