@@ -1,6 +1,6 @@
 ---
 title: "514 Lab 4"
-author: "Your Group Name Here"
+author: "Group 13"
 date: "Due Date 11/10"
 output: html_document
 ---
@@ -11,19 +11,6 @@ knitr::opts_chunk$set(
   echo = TRUE,comment = '', fig.width = 3, fig.height = 3
   )
 ```
-
-
-# Setup
-
-
-### Changing the author field and file name.
-
-##### (a) Change the `author:` field on the Rmd document from Your Group Name Here to your group number.
-
-##### (b) Rename this file to "HW4_YourGroupHere.Rmd", where YourGroupHere is changed to your group number
-
-# Cleanup 
-Once you are done with this setup, updating the author and date fields, **delete** the *Setup* and the *Cleanup* sections of this document! 
 
 
 ##  Packages
