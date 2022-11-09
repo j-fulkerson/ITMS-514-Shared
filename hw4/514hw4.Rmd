@@ -1,0 +1,264 @@
+---
+title: "514 Lab 4"
+author: "Your Group Name Here"
+date: "Due Date 11/10"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,comment = '', fig.width = 3, fig.height = 3
+  )
+```
+
+
+# Setup
+
+
+### Changing the author field and file name.
+
+##### (a) Change the `author:` field on the Rmd document from Your Group Name Here to your group number.
+
+##### (b) Rename this file to "HW4_YourGroupHere.Rmd", where YourGroupHere is changed to your group number
+
+# Cleanup 
+Once you are done with this setup, updating the author and date fields, **delete** the *Setup* and the *Cleanup* sections of this document! 
+
+
+##  Packages
+
+```{r message=FALSE}
+# add packages you need for this assignment
+```
+
+----- 
+
+
+## How to work with this document
+
+There are several ways to format your answer, but whatever you do, please make sure it is *readable* by a human and clean. That is, don't leave stray comments and commented instructions in your submitted work. You may use a quote code `>` to start your answer after any r/python code chunks you are typing. An example is provided in the first question below. 
+
+----- 
+
+## Part One: Hypothesis Testing (20 points)
+
+### Checking out some small data sets that come with R 
+
+In this problem, you will load and work with the `mtcars` data set in R.  
+
+Two data samples are independent if they come from unrelated populations and the samples does not affect each other. Here, we assume that the data populations follow the *normal distribution*.
+In the data frame column `mpg` (which stands for "miles per galon") of the data set `mtcars`, there are gas mileage data of various 1974 U.S. automobiles. Let's take a look: 
+
+```{r}
+ mtcars$mpg 
+```
+
+Meanwhile, another data column in `mtcars`, named `am`, indicates the transmission type of the automobile model (0 = automatic, 1 = manual):
+
+```{r}
+mtcars$am 
+```
+In particular, the gas mileage for manual and automatic transmissions are two independent data populations.
+
+Assume that the data in `mtcars` follows the normal distribution, let us look for whether the **difference between the mean gas mileage** of manual and automatic transmissions seems to be statistically significant.
+
+#### a. Please construct a hypothesis test for ratio of the variances of these two populations. Then choose the appropriate test to make a conclusion. (10 points)
+
+> Your answer
+
+#### b. Based on the result in a), construct a hypothesis test for the means of these two populations. Show your conclusion.(10 points)
+
+> Your answer
+
+**Hints and shortcuts** 
+The gas mileage for automatic transmission can be listed as follows:
+
+```{r, fig.width = 2.5, fig.height = 2.5}
+L = mtcars$am == 0 
+ mpgAuto = mtcars[L,]$mpg 
+ mpgAuto                    # automatic transmission mileage
+```
+
+By applying the negation of L, we can find the gas mileage for manual transmission: 
+
+```{r}
+mpgManual = mtcars[!L,]$mpg 
+ mpgManual                  # manual transmission mileage 
+```
+
+Now you should be able to finish solving the problem. Enjoy! :) 
+
+
+
+## Part Two: Working With Data (80 points)
+
+In this part, we work on the cybersecurity breach report data downloaded 2015-02-26 from the US Health and Human Services. 
+
+To understand what the data represents, here is some information from the *Office for Civil Rights* of the  *U.S. Department of Health and Human Services*: 
+
+* "As required by section 13402(e)(4) of the HITECH Act, the Secretary must post a list of breaches of unsecured protected health information affecting 500 or more individuals. 
+* "Since October 2009 organizations in the U.S. that store data on human health are required to report any incident that compromises the confidentiality of 500 or more patients / human subjects (45 C.F.R. 164.408). These reports are publicly available. Our data  set  was downloaded from the Office for Civil Rights of the U.S. Department of Health and Human Services, 2015-02-26."  
+
+Load this data set and save it as `cyberData`,  using the following code: 
+
+```{r}
+cyberData<-read.csv(url("https://vincentarelbundock.github.io/Rdatasets/csv/Ecdat/HHSCyberSecurityBreaches.csv"))
+```
+
+### Data Exploration
+
+### Question 1. (5 points)
+Check the structure of the data using the `str` command. What type of object is `cyberData`?  How many observations are recorded?
+How  many variables are recorded? 
+List all  of  the types of random variables that are  recorded based on the output (i.e. int/float etc.). 
+
+```
+[Your code here. Make this code chunk an actual `r`  chunk; or `python` chunk if you're using Python! ]
+```
+
+> *[Your  text answer here.]* The data set is stored as a ..... with .... rows and .... columns. There are  .... observations of ....  variables.  All  of  the types of random variables are ....
+  
+
+
+### Question 2. (20 points)
+
+Let us compare the number of affected individuals across some states. 
+
+* Extract the subset of the data for Kansas and Arkansas; in other words, the subset of the data for which `State` column equals `"KS"` or`"AR"`. Add a third state to the dataframe, say, Illinois (i.e., where `State == "IL"`). Name the new **dataframe** `threeStates`. 
+
+
+```
+Your code here.
+```
+
+* Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
+
+```
+Your code here.
+```
+> [Your answer here]
+
+The above plot should leave you wondering if Illinois is special, in that it contains some really large data breaches. Let's investigate: 
+
+* How many observations in `cyberData` represent a cyber security breach that affected 100,000 individuals or more? 
+
+```
+[Your code here.]
+```
+> *[Your discussion here.]* 
+
+* How many of those are in Illinois? 
+
+
+```
+[Your code here.]
+```
+> *[Your discussion here.]* 
+
+
+
+### Small analyses across time 
+
+Let us now compare attacks before and after 2013. The goal is to see if there is a significant difference in mean number of affected individuals. 
+
+### Question 3. (10 points)
+
+Check the type of the `Breach.Submission.Date` column: is it a numeric? What type is it? 
+```
+[Your code here.]
+```
+Let us change it to a numeric and extract *the year only*. The code that does this is `as.numeric(format(as.Date(.....),"%Y"))`. Let us use this code to break up the data to before and after 2013, like this: 
+
+```{r}
+before2013 <- subset(cyberData, as.numeric(format(as.Date(Breach.Submission.Date),"%Y")) <=2013 )
+after2013  <- subset(cyberData, as.numeric(format(as.Date(Breach.Submission.Date),"%Y")) > 2013 )
+```
+
+
+How many observations are in each subset of the population? 
+
+> *Type your answer here* to write down the number of observations. (Hint: if you are working with the dataframe structure, the command you want to use is `nrow`.)* 
+
+
+
+### Specific type of security breaches 
+
+### Question 4. (20 points)
+
+* What proportion of data entries in `cyberData` have `Type.of.Breach  == "Hacking/IT Incident"` ? 
+
+```
+Your code here.
+```
+
+> *Your answer here.* 
+
+* What proportion of data entries in `before2013` have `Type.of.Breach  == "Hacking/IT Incident"` ?  
+
+```
+Your code here.
+```
+
+> *Your answer here.* 
+
+* What proportion of data entries in `after2013` have `Type.of.Breach  == "Hacking/IT Incident"` ?  
+
+```
+Your code here.
+```
+
+> *Your answer here.* 
+
+
+* What are all the different values of `Type.Of.Breach` reported in the data set? How many are hacking/IT incidents? 
+
+```{r}
+# Your code here.
+# 
+# [Hint: make a table using the `table` function.]
+# Here is a simple example:
+ex <- c("type a", "type b", "type a", "type a", "c")
+table(ex)
+# MAKE SURE TO REMOVE THE EXAMPLE CODE FROM YOUR HW SUBMISSION! 
+```
+
+> Your answer here: what do you see?? 
+
+* What type of breach is reported in the 748th row of `cyberData`?  How about 349th row? Was row 349 counted in the proportion of Hacking/IT incident breaches you computed above? Why or why not? 
+
+```{r}
+# Your code here.
+# 
+# [Hint: use table again!]
+# Here is a simple example:
+# compare this to the above code: 
+ex <- c("type a", "type b", "type a", "type a, type b", "c")
+table(ex)
+# and also compare to this: 
+tb. <- strsplit(ex, ', ')
+table(unlist(tb.))
+```
+
+> Your answer here! 
+
+
+
+### Conducting Hypothesis Testing
+
+As you know, this data set contains *all* reports regarding health information data breaches from 2009 to 2015. Let's pretend this is just a *sample* from the population of *all data breaches*, related or not to health information. 
+
+### Question 5. (15 points)
+
+* Compare the number of individuals affected by data breaches (column `Individuals.Affected`) in two states, Arkansas (`State=="AR"`) and California (`State=="CA"`). 
+This can be done by performing a test of difference in means, for example. Assume the individuals affected follows an **approximately normal distribution**.
+
+
+*Please note, in order to answer this question completely, you will need to run several lines of code, extract subsets of the data appropriately, run a statistical hypothesis test, and interpret the results. Draw a conclusion. Partial answers to the question are insufficient.* 
+
+```{r}
+# Your code here.
+# 
+```
+
+> Your answer / discussion / interpretation here. 
