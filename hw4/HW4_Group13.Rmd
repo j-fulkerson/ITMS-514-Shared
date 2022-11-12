@@ -119,11 +119,9 @@ List all  of  the types of random variables that are  recorded based on the outp
 
 ```{r}
 str(cyberData)
-print("1151 observations of 10 variables")
-print("variable types: int, chr, logi")
 ```
 
-> *[Your  text answer here.]* The data set is stored as a ..... with .... rows and .... columns. There are  .... observations of ....  variables.  All  of  the types of random variables are ....
+> The data set is stored as a data.frame with 1151 rows and 10 columns. There are  1151 observations of 10  variables.  All  of  the types of random variables are: int; chr; logi
   
 
 
