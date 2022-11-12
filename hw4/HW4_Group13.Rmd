@@ -133,8 +133,8 @@ Let us compare the number of affected individuals across some states.
 
 
 ```{r}
-cyberDatainARorKS <- cyberData[cyberData$State=="AR", "KS",]
-threeStates <- cyberData[cyberData$State=="IL", "AR", "KS",]
+cyberDatainARorKS <- cyberData[cyberData$State == "AR", "KS",]
+threeStates <- cyberData[cyberData$State == "AR", "KS", "IL",]
 ```
 
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
