@@ -117,8 +117,10 @@ Check the structure of the data using the `str` command. What type of object is 
 How  many variables are recorded? 
 List all  of  the types of random variables that are  recorded based on the output (i.e. int/float etc.). 
 
-```
-[Your code here. Make this code chunk an actual `r`  chunk; or `python` chunk if you're using Python! ]
+```{r}
+str(cyberData)
+print("1151 observations of 10 variables")
+print("variable types: int, chr, logi")
 ```
 
 > *[Your  text answer here.]* The data set is stored as a ..... with .... rows and .... columns. There are  .... observations of ....  variables.  All  of  the types of random variables are ....
