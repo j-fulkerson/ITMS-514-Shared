@@ -177,20 +177,22 @@ Let us now compare attacks before and after 2013. The goal is to see if there is
 ### Question 3. (10 points)
 
 Check the type of the `Breach.Submission.Date` column: is it a numeric? What type is it? 
-```
-[Your code here.]
+```{r}
+sapply(cyberData, class)
 ```
 Let us change it to a numeric and extract *the year only*. The code that does this is `as.numeric(format(as.Date(.....),"%Y"))`. Let us use this code to break up the data to before and after 2013, like this: 
 
 ```{r}
 before2013 <- subset(cyberData, as.numeric(format(as.Date(Breach.Submission.Date),"%Y")) <=2013 )
 after2013  <- subset(cyberData, as.numeric(format(as.Date(Breach.Submission.Date),"%Y")) > 2013 )
+nrow(before2013)
+nrow(after2013)
 ```
 
 
 How many observations are in each subset of the population? 
 
-> *Type your answer here* to write down the number of observations. (Hint: if you are working with the dataframe structure, the command you want to use is `nrow`.)* 
+> There are 848 observations before 2013 and 303 observations after 2013
 
 
 
