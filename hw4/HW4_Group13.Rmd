@@ -132,8 +132,9 @@ Let us compare the number of affected individuals across some states.
 * Extract the subset of the data for Kansas and Arkansas; in other words, the subset of the data for which `State` column equals `"KS"` or`"AR"`. Add a third state to the dataframe, say, Illinois (i.e., where `State == "IL"`). Name the new **dataframe** `threeStates`. 
 
 
-```
-Your code here.
+```{r}
+cyberDatainARorKS <- cyberData[cyberData$State=="AR", "KS",]
+threeStates <- cyberData[cyberData$State=="IL", "AR", "KS",]
 ```
 
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
