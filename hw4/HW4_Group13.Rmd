@@ -145,7 +145,8 @@ cyberData$State == "IL", ]
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
 
 ```{r}
-boxplot(cyberData$Individuals.Affected, cyberData$threeStates)
+boxplot(cyberData$Individuals.Affected, cyberData$threeStates,
+ horizontal = TRUE)
 ```
 
 
