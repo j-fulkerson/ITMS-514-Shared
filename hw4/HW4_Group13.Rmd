@@ -17,7 +17,10 @@ knitr::opts_chunk$set(
 
 ```{r message=FALSE}
 # add packages you need for this assignment
+install.packages("ggplot2")
+library("ggplot2")
 ```
+
 
 ----- 
 
@@ -141,10 +144,11 @@ cyberData$State == "IL", ]
 
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
 
+```{r}
+ggplot(cyberData, aes(x = Individuals.Affected, y = threeStates, fill = Individuals.Affected)) +
+ geom_boxplot()
 ```
-Your code here.
-```
-> [Your answer here]
+
 
 The above plot should leave you wondering if Illinois is special, in that it contains some really large data breaches. Let's investigate: 
 
