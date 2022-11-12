@@ -145,8 +145,7 @@ cyberData$State == "IL", ]
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
 
 ```{r}
-ggplot(cyberData, aes(x = Individuals.Affected, y = threeStates, fill = Individuals.Affected)) +
- geom_boxplot()
+boxplot(cyberData$Individuals.Affected)
 ```
 
 
