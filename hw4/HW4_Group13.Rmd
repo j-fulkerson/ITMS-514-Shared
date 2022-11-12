@@ -137,7 +137,6 @@ cyberDatainARorKS <- cyberData[cyberData$State == "AR" |
 cyberData$State == "KS", ]
 threeStates <- cyberData[cyberData$State == "AR" | cyberData$State == "KS" |
 cyberData$State == "IL", ]
-print(threeStates)
 ```
 
 * Create a boxplot of `Individuals.Affected` split across the three states. What conclusion can you draw from it?
