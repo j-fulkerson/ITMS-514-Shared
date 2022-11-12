@@ -154,18 +154,20 @@ The above plot should leave you wondering if Illinois is special, in that it con
 
 * How many observations in `cyberData` represent a cyber security breach that affected 100,000 individuals or more? 
 
+```{r}
+securityBreachOver100 <- cyberData[cyberData$Individuals.Affected >= 100000, ]
+str(securityBreachOver100)
 ```
-[Your code here.]
-```
-> *[Your discussion here.]* 
+> There are 40 observations in cyberData that represent breaches that affected over 100,000 individuals
 
 * How many of those are in Illinois? 
 
 
+```{r}
+securityBreachOver100inIL <- securityBreachOver100[securityBreachOver100$State == "IL", ]
+str(securityBreachOver100inIL)
 ```
-[Your code here.]
-```
-> *[Your discussion here.]* 
+> Out of the 40 breaches that affected over 100,000 individuals, 3 of them were in Illinois
 
 
 
