@@ -261,8 +261,9 @@ This can be done by performing a test of difference in means, for example. Assum
 *Please note, in order to answer this question completely, you will need to run several lines of code, extract subsets of the data appropriately, run a statistical hypothesis test, and interpret the results. Draw a conclusion. Partial answers to the question are insufficient.* 
 
 ```{r}
-# Your code here.
-# 
+cyberDatainAR <- cyberData[cyberData$State == "AR",]
+cyberDatainCA <- cyberData[cyberData$State == "CA",]
+var.test(cyberDatainAR$Individuals.Affected, cyberDatainCA$Individuals.Affected)
 ```
 
-> Your answer / discussion / interpretation here. 
+> With a p-value < 0.05, we should reject null Hypothesis. The numbers of individuals affected by data breache in the states of Arkansas and California are quite different.
