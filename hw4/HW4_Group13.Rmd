@@ -58,6 +58,12 @@ Assume that the data in `mtcars` follows the normal distribution, let us look fo
 > H_0:\sigma^2_{auto}/\sigma^2_{manual} & = 1, \\
 H_1:\sigma^2_{auto}/\sigma^2_{manual} & \ne 1,
 ```{r}
+L = mtcars$am == 0 
+ mpgAuto = mtcars[L,]$mpg 
+ mpgAuto                    # automatic transmission mileage
+mpgManual = mtcars[!L,]$mpg 
+ mpgManual                  # manual transmission mileage 
+
 var.test(mpgAuto,mpgManual,alternative = c("two.sided"),conf.level = 0.95)
 var.test(mpgAuto,mpgManual,alternative = c("two.sided"),conf.level = 0.9)
 ```
