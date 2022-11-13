@@ -205,7 +205,7 @@ How many observations are in each subset of the population?
 ```{r}
 numHackIT <-nrow(cyberData[cyberData$Type.of.Breach  == "Hacking/IT Incident",])
 numRows <- nrow(cyberData)
-noHackIT/numRows
+numHackIT/numRows
 ```
 
 > Around 6.69% of the data entries in cyberData are of type: "Hacking/IT Incident"
