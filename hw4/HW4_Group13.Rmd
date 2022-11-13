@@ -202,59 +202,49 @@ How many observations are in each subset of the population?
 
 * What proportion of data entries in `cyberData` have `Type.of.Breach  == "Hacking/IT Incident"` ? 
 
-```
-Your code here.
+```{r}
+numHackIT <-nrow(cyberData[cyberData$Type.of.Breach  == "Hacking/IT Incident",])
+numRows <- nrow(cyberData)
+noHackIT/numRows
 ```
 
-> *Your answer here.* 
+> Around 6.69% of the data entries in cyberData are of type: "Hacking/IT Incident"
 
 * What proportion of data entries in `before2013` have `Type.of.Breach  == "Hacking/IT Incident"` ?  
 
-```
-Your code here.
+```{r}
+numHackITpre2013 <-nrow(before2013[before2013$Type.of.Breach  == "Hacking/IT Incident",])
+numHackITpre2013/numRows
 ```
 
-> *Your answer here.* 
+> Around 4.26% of breached before 2013 are of type: "hacking/IT Incident"
 
 * What proportion of data entries in `after2013` have `Type.of.Breach  == "Hacking/IT Incident"` ?  
 
-```
-Your code here.
+```{r}
+numHackITafter2013 <-nrow(after2013[after2013$Type.of.Breach  == "Hacking/IT Incident",])
+numHackITafter2013/numRows
 ```
 
-> *Your answer here.* 
+> Around 2.43% of breaches after 2013 are of type: "hacking/IT Incident"
 
 
 * What are all the different values of `Type.Of.Breach` reported in the data set? How many are hacking/IT incidents? 
 
 ```{r}
-# Your code here.
-# 
-# [Hint: make a table using the `table` function.]
-# Here is a simple example:
-ex <- c("type a", "type b", "type a", "type a", "c")
-table(ex)
-# MAKE SURE TO REMOVE THE EXAMPLE CODE FROM YOUR HW SUBMISSION! 
+table(cyberData$Type.of.Breach)
 ```
 
-> Your answer here: what do you see?? 
+> The different type of values for Type.Of.Breach are: "Unknown, Unauthorized Access/Disclosure, Theft, Loss, Improper Disposal, Hacking/IT Incident, Other". There appears to be 77 explicit Hacking/IT Incident and 17 aditional ones were Hacking/IT Incident appears to be one of the types among others. 94 total
 
 * What type of breach is reported in the 748th row of `cyberData`?  How about 349th row? Was row 349 counted in the proportion of Hacking/IT incident breaches you computed above? Why or why not? 
 
 ```{r}
-# Your code here.
-# 
-# [Hint: use table again!]
-# Here is a simple example:
-# compare this to the above code: 
-ex <- c("type a", "type b", "type a", "type a, type b", "c")
-table(ex)
-# and also compare to this: 
-tb. <- strsplit(ex, ', ')
-table(unlist(tb.))
+cyberData[748,7]
+cyberData[349,7]
 ```
 
-> Your answer here! 
+> Row 748: "Loss, Theft" && Row 349: "Hacking/IT Incident, Unauthorized Access/Disclosure". And NO, row 349 was not counted in the proportion computed above, because the calculation was counting entries that ONLY had "Hacking/IT Incident" and rejected those with multiple types.
 
 
 
