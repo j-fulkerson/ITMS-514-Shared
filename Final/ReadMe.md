@@ -2,11 +2,11 @@
 
 **The final project is to investigate a data set using all the tools we learn in class. Your project should include the following three parts.**
 
-- [ ]`Data Preparation: Show the information of the dataset. *E.g.# of observations, # of attributes, data types, missing values, etc.*`
+- [ - ]`Data Preparation: Show the information of the dataset. *E.g.# of observations, # of attributes, data types, missing values, etc.*`
 
-- [ ]`Data Exploration(EDA): Data Visualization, at least one histogram, one boxplot, and one overlay histogram with your conclusion`
+- [ - ]`Data Exploration(EDA): Data Visualization, at least one histogram, one boxplot, and one overlay histogram with your conclusion`
 
-- [ ]`Data Analysis Hypothesis Testing: Construct a hypothesis testing with null and alternative hypotheses. Use the appropriate test to get the conclusion. Build a linear regression model with subset selection. *Please indicate all significant attributes, assess your model, and predict in a test dataset*.`
+- [ - ]`Data Analysis Hypothesis Testing: Construct a hypothesis testing with null and alternative hypotheses. Use the appropriate test to get the conclusion. Build a linear regression model with subset selection. *Please indicate all significant attributes, assess your model, and predict in a test dataset*.`
 
 **____________________________________________________________________________________________________________________________________________**
 
