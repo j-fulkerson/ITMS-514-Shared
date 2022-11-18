@@ -9,9 +9,6 @@ output: html_document
 
 ```{r message=FALSE}
 # add packages you need for this assignment
-install.packages("ggplot2")
-library("ggplot2")
-install.packages("tidyverse")
 ```
 
 ```{r setup, include=FALSE}
