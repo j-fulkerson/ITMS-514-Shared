@@ -1,14 +1,22 @@
 ---
-title: "Final"
+title: "Final Project ITMS-514"
 author: "Group 13"
 date: "Due Date 11/26"
 output: html_document
 ---
 
 # California Avocado Production 1980-2020
-### Final Project ITMS-514
 
-```{r message=FALSE}
+## About Dataset
+Parts of California has the right weather conditions to produce a lot of avocados. This data consist of 40 years of California Avocado production by county per year.
+
+In this dataset you will find the annual amount of acres harvested, yield, production, price per unit, total value by county.
+
+This data could be used to practice data visualization, data cleaning, forecasting
+
+The data is from USDA's National Agricultural Statistics Service California Field Office (Part of the Pacific Regional Field Office).
+
+```{r echo=FALSE, message=FALSE }
 # add packages you need for this assignment
 ```
 
@@ -18,51 +26,47 @@ knitr::opts_chunk$set(
   )
 ```
 
-```{r}
+```{r echo=FALSE}
 raw_data <- read.csv("C:/Users/joe/Desktop/git-repos/ITMS-514-Shared/Final/cali_avocados.csv")
+df <- raw_data
 ```
 
 ## Data Preperation
 
 **Observations of the Dataset**
 ```{r}
-str(raw_data)
-df <- raw_data
+str(df)
+
 ```
  
 ## Missing values
 
-Harvest Acres
-```{r}
+**Harvest Acres**
+```{r echo=FALSE}
 which(is.na(df$Harvested.Acres))
 sum(is.na(df$Harvested.Acres))
 ```
 
-Yield
-```{r}
+**Yield**
+```{r echo=FALSE}
 which(is.na(df$Yield))
 sum(is.na(df$Yield))
 ```
 
-Production
-```{r}
+**Production**
+```{r echo=FALSE}
 which(is.na(df$Production))
 sum(is.na(df$Production))
 ```
 
-Price.Pu
-```{r}
+**Price.Pu**
+```{r echo=FALSE} 
 which(is.na(df$Price.P.U))
 sum(is.na(df$Price.P.U))
 ```
 
-Value
-```{r}
+**Value**
+```{r echo=FALSE}
 which(is.na(df$Value))
 sum(is.na(df$Value))
 ```
-
-
-
-
-of attributes, data types,
