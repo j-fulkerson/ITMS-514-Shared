@@ -13,7 +13,7 @@
 
 **____________________________________________________________________________________________________________________________________________**
 
-The presentation is 20-25 minutes + 5 minutes Q&A. You can use either slides or HTML files to present your work.
+> The presentation is 20-25 minutes + 5 minutes Q&A. You can use either slides or HTML files to present your work.
 
 Presentation Schedule: https://docs.google.com/spreadsheets/d/1nkGA89EvFXzMO_SAadAs84d8gRCRUO98IRzgmzhxptg/edit?usp=sharing
 Your final project grade = Your team grade (Based on scoring rubrics) * your personal points (Peer evaluation form)/highest team member points (Peer evaluation form)
