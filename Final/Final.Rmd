@@ -5,7 +5,8 @@ date: "Due Date 11/26"
 output: html_document
 ---
 
-# Final Project ITMS-514
+# California Avocado Production 1980-2020
+### Final Project ITMS-514
 
 ```{r message=FALSE}
 # add packages you need for this assignment
@@ -23,7 +24,7 @@ raw_data <- read.csv("C:/Users/joe/Desktop/git-repos/ITMS-514-Shared/Final/cali_
 
 ## Data Preperation
 
-**Observations and presentation of California Avocados Dataset**
+**Observations of the Dataset**
 ```{r}
 str(raw_data)
 df <- raw_data
@@ -31,12 +32,37 @@ df <- raw_data
  
 ## Missing values
 
+Harvest Acres
+```{r}
+which(is.na(df$Harvested.Acres))
+sum(is.na(df$Harvested.Acres))
+```
+
 Yield
 ```{r}
-which(is.na(df$Year))
-sum(is.na(df$Year))
 which(is.na(df$Yield))
 sum(is.na(df$Yield))
 ```
+
+Production
+```{r}
+which(is.na(df$Production))
+sum(is.na(df$Production))
+```
+
+Price.Pu
+```{r}
+which(is.na(df$Price.P.U))
+sum(is.na(df$Price.P.U))
+```
+
+Value
+```{r}
+which(is.na(df$Value))
+sum(is.na(df$Value))
+```
+
+
+
 
 of attributes, data types,
