@@ -1,0 +1,40 @@
+---
+title: "Final"
+author: "Group 13"
+date: "Due Date 11/26"
+output: html_document
+---
+
+# Final Project ITMS-514
+
+```{r message=FALSE}
+# add packages you need for this assignment
+install.packages("ggplot2")
+library("ggplot2")
+install.packages("tidyverse")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,comment = '', fig.width = 3, fig.height = 3
+  )
+```
+
+```{r}
+raw_data <- read.csv("C:/Users/joe/Desktop/git-repos/ITMS-514-Shared/Final/cali_avocados.csv")
+```
+
+## Data Preperation
+
+**Observations and presentation of California Avocados Dataset**
+```{r}
+str(raw_data)
+df <- raw_data
+```
+
+of attributes, data types, 
+## Missing values
+```{r}
+which(is.na(df$Yield))
+sum(is.na(df$Yield))
+```
