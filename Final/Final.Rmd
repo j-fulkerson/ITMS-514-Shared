@@ -125,3 +125,17 @@ hist(avocado_data$Value)
 
 
 
+## Hypothesis Test
+
+**Price mean**
+```{r}
+price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
+```
+**t-test**
+```{r}
+t.test(x = avocado_data$Price.P.U, mu = price_mean)
+```
+
+
+## Linear Regression Model
+
