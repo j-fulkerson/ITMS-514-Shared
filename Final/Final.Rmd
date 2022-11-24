@@ -107,6 +107,11 @@ sum(is.na(avocado_data))
 
 ## Histogram
 
+**Harvested Acres**
+```{r}
+hist(avocado_data$Harvested.Acres)
+```
+
 **Yield**
 ```{r}
 hist(avocado_data$Yield)
@@ -140,3 +145,7 @@ t.test(x = avocado_data$Price.P.U, mu = price_mean)
 
 ## Linear Regression Model
 
+```{r}
+acres_production_lm <- lm(Harvested.Acres ~ Production, data = avocado_data)
+summary(acres_production_lm)
+```
