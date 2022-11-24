@@ -149,3 +149,4 @@ t.test(x = avocado_data$Price.P.U, mu = price_mean)
 acres_production_lm <- lm(Harvested.Acres ~ Production, data = avocado_data)
 summary(acres_production_lm)
 ```
+**Must Generate Plots to visualize regression**
