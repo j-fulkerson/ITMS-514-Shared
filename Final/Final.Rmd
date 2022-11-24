@@ -38,6 +38,7 @@ avocado_data <- data.frame(raw_data)
 **Observations of the Dataset**
 ```{r}
 str(avocado_data)
+summary(avocado_data)
 ```
  
 
