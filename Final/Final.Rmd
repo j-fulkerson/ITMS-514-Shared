@@ -143,6 +143,9 @@ t.test(x = avocado_data$Price.P.U, mu = price_mean)
 ```
 
 
+
+
+
 ## Linear Regression Model
 
 ```{r}
