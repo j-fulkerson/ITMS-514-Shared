@@ -70,7 +70,8 @@ col = "darkmagenta", freq = FALSE)
 **Production**
 
 ```{r}
-
+ggplot(avocado_data, aes(x = values, fill = group)) +
+  geom_histogram(position = "identity", alpha = 0.2, bins = 50)
 ```
 
 ## Boxplot
