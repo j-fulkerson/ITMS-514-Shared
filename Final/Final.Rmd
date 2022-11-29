@@ -19,6 +19,7 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 
 ```{r echo=FALSE, message=FALSE }
 # add packages you need for this assignment
+install.packages('ggplot2')
 ```
 
 ```{r setup, include=FALSE}
@@ -139,7 +140,7 @@ col = "darkmagenta", freq = FALSE)
 **Production**
 
 ```{r}
-hist(avocado_data$Production)
+
 ```
 
 **Price P/U**
@@ -160,7 +161,6 @@ hist(avocado_data$Value)
 boxplot(Production ~ Year, data = avocado_data, col = "orange",
 main = "Production of Avocados per Year", xlab = "Year", ylab =
 "Produced Avocados")
-
 ```
 
 ## Hypothesis Test
