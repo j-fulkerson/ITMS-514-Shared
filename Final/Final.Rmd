@@ -27,32 +27,30 @@ library("ggplot2")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Import Data Frame
 ```{r echo=FALSE}
 raw_data <- read.csv("cali_avocados.csv")
 avocado_data <- data.frame(raw_data)
 ```
 
 ## Data Preperation
-
 **Observations of the Dataset**
-
 ```{r}
 str(avocado_data)
 summary(avocado_data)
 ```
 
+
 ## Missing values
 **TOTAL**
-
 ```{r}
 which(is.na(avocado_data))
 sum(is.na(avocado_data))
 ```
 
+
 ## Histogram
-
 **Harvested Acres**
-
 ```{r}
 harvested_acres <- avocado_data$Harvested.Acres
 h1 <- hist(harvested_acres, col = "blue")
@@ -60,17 +58,15 @@ text(h1$mids, h1$counts, labels = h1$counts, adj = c(0.5, -0.5))
 
 
 ```
-
 **Yield**
-
 ```{r}
 hist(avocado_data$Yield, ylim = c(0, .3), main = "Hist of Yield Density",
 xlab = "Yield", xlim = c(0, 10), 
 col = "darkmagenta", freq = FALSE)
 ```
 
-**Production**
 
+## Overlay Histogram
 ```{r}
 data_1 <- (rnorm(avocado_data$Harvested.Acres))
 data_2 <- (rnorm(avocado_data$County))
@@ -80,53 +76,48 @@ plot (Histogram_1, col = rgb(1,0,0,0.4),xlab = 'Observations',freq = FALSE, main
 plot (Histogram_2, xaxt = County, yaxt = Harvested.Acres,col = rgb(0,0,1,0.4), add = TRUE, freq = FALSE)
 ```
 
-## Boxplot
 
+## Boxplot
 ```{r}
 boxplot(Production ~ Year, data = avocado_data, col = "orange",
 main = "Production of Avocados per Year", xlab = "Year", ylab =
 "Produced Avocados")
 ```
 
+
 ## Hypothesis Test
-
 > H0: μ = 1576.154 Ha: μ ≠ 1576.154
-
+> Null Hypothesis: The amount of acres being harvested does not affect the price per unit of avocados
 **Price mean**
-
 ```{r}
 price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
 print(price_mean)
 ```
 
-**Mean Price Per Unit**
-
+**Subset of Smaller Harvests**
 > Small Harvests
-
 ```{r}
 harvest_mean <- mean(avocado_data$Harvested.Acres, na.rm = TRUE)
 small_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres < harvest_mean)
 small_harvest_price_mean <- mean(small_harvest$Price.P.U, na.rm = TRUE)
 print(small_harvest_price_mean)
 ```
-
+**Subset of Larger Harvests**
 > Large Harvests
-
 ```{r}
 large_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres > harvest_mean)
 large_harvest_price_mean <- mean(large_harvest$Price.P.U, na.rm = TRUE)
 print(large_harvest_price_mean)
 ```
 
-> The amount of acres being harvested does not affect the price per unit of avocados
-
 **t-test**
-
 ```{r}
 t.test(x = avocado_data$Price.P.U, mu = small_harvest_price_mean)
 
 t.test(x = avocado_data$Price.P.U, mu = large_harvest_price_mean)
 ```
+> Conclusion: Null hypothesis is rejected and the alternative is true because the mean price per unit for the subsets of small harvests or large harvests does not reflect the price per unit of the total population.
+
 
 ## Linear Regression Model
 **Plot**
