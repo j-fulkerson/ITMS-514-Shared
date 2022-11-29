@@ -147,6 +147,7 @@ print(small_harvest_price_mean)
 
 large_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres > harvest_mean)
 large_harvest_price_mean <- mean(large_harvest$Price.P.U, na.rm = TRUE)
+print(large_harvest_price_mean)
 ```
 
 > The amount of acres being harvested does not affect the price per unit of avocados 
