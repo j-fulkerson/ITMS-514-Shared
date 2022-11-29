@@ -133,6 +133,9 @@ hist(avocado_data$Value)
 
 ## Hypothesis Test
 
+H0: μ = 1576.154
+HA: μ ≠ 1576.154
+
 **Price mean**
 ```{r}
 price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
