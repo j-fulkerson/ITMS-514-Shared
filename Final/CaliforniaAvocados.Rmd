@@ -18,9 +18,7 @@ This data could be used to practice data visualization, data cleaning, forecasti
 The data is from USDA's National Agricultural Statistics Service California Field Office (Part of the Pacific Regional Field Office).
 
 ```{r echo=FALSE, message=FALSE }
-# add packages you need for this assignment
-install.packages("ggplot2", dependencies = TRUE)
-library("ggplot2")
+
 ```
 
 ```{r setup, include=FALSE}
