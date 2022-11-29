@@ -19,7 +19,8 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 
 ```{r echo=FALSE, message=FALSE }
 # add packages you need for this assignment
-install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+# install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+library(ggplot2)
 ```
 
 ```{r setup, include=FALSE}
@@ -47,7 +48,6 @@ summary(avocado_data)
 which(is.na(avocado_data))
 sum(is.na(avocado_data))
 ```
-
 
 ## Histogram
 
@@ -122,10 +122,17 @@ t.test(x = avocado_data$Price.P.U, mu = large_harvest_price_mean)
 ```
 
 ## Linear Regression Model
-
+**Plot**
 ```{r}
-acres_production_lm <- lm(Harvested.Acres ~ Production, data = avocado_data)
-summary(acres_production_lm)
+plot(avocado_data$Harvested.Acres, avocado_data$Production)
 ```
-
-**Must Generate Plots to visualize regression**
+**Linear Regression Model**
+```{r}
+acres_production_regression <- lm(Production ~ Harvested.Acres,
+  data = avocado_data)
+summary(acres_production_regression)
+```
+**Linear Regression Plotted**
+```{r}
+abline(acres_production_regression, col = "blue")
+```
