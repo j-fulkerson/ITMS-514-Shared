@@ -8,6 +8,7 @@ output: html_document
 # California Avocado Production 1980-2020
 
 ## About Dataset
+
 Parts of California has the right weather conditions to produce a lot of avocados. This data consist of 40 years of California Avocado production by county per year.
 
 In this dataset you will find the annual amount of acres harvested, yield, production, price per unit, total value by county.
@@ -21,9 +22,7 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 ```
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo = TRUE,comment = '', fig.width = 3, fig.height = 3
-  )
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r echo=FALSE}
@@ -31,83 +30,98 @@ raw_data <- read.csv("cali_avocados.csv")
 avocado_data <- data.frame(raw_data)
 ```
 
-
-
 ## Data Preperation
 
 **Observations of the Dataset**
+
 ```{r}
 str(avocado_data)
 summary(avocado_data)
 ```
- 
-
-
 
 ## Missing values
 
 **Year**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Year))
 sum(is.na(avocado_data$Year))
 ```
+
 **Commodity Code**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Commodity.Code))
 sum(is.na(avocado_data$Commodity.Code))
 ```
+
 **Crop Name**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Crop.Name))
 sum(is.na(avocado_data$Crop.Name))
 ```
+
 **County Code**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$County.Code))
 sum(is.na(avocado_data$County.Code))
 ```
+
 **County**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$County))
 sum(is.na(avocado_data$County))
 ```
+
 **Harvest Acres**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Harvested.Acres))
 sum(is.na(avocado_data$Harvested.Acres))
 ```
+
 **Yield**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Yield))
 sum(is.na(avocado_data$Yield))
 ```
+
 **Production**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Production))
 sum(is.na(avocado_data$Production))
 ```
+
 **Price.Pu**
-```{r echo=FALSE} 
+
+```{r echo=FALSE}
 which(is.na(avocado_data$Price.P.U))
 sum(is.na(avocado_data$Price.P.U))
 ```
+
 **Value**
+
 ```{r echo=FALSE}
 which(is.na(avocado_data$Value))
 sum(is.na(avocado_data$Value))
 ```
+
 **TOTAL**
+
 ```{r}
 which(is.na(avocado_data))
 sum(is.na(avocado_data))
 ```
 
-
-
-
 ## Histogram
 
 **Harvested Acres**
+
 ```{r}
 harvested_acres <- avocado_data$Harvested.Acres
 h1 <- hist(harvested_acres, col = "blue")
@@ -115,73 +129,79 @@ text(h1$mids, h1$counts, labels = h1$counts, adj = c(0.5, -0.5))
 ```
 
 **Yield**
+
 ```{r}
 hist(avocado_data$Yield, ylim = c(0, .3), main = "Hist of Yield Density",
 xlab = "Yield", xlim = c(0, 10), 
 col = "darkmagenta", freq = FALSE)
-
 ```
+
 **Production**
+
 ```{r}
 hist(avocado_data$Production)
 ```
+
 **Price P/U**
+
 ```{r}
 hist(avocado_data$Price.P.U)
 ```
+
 **Value**
+
 ```{r}
 hist(avocado_data$Value)
 ```
 
 ## Boxplot
+
 ```{r}
-boxplot(Production ~ Year, data = avocado_data, col = "orange", main =
-"Production of Avocados per Year", xlab = "Year", ylab =
+boxplot(Production ~ Year, data = avocado_data, col = "orange",
+main = "Production of Avocados per Year", xlab = "Year", ylab =
 "Produced Avocados")
 
 ```
 
-
-
 ## Hypothesis Test
 
-> H0: μ = 1576.154
-> Ha: μ ≠ 1576.154
+> H0: μ = 1576.154 Ha: μ ≠ 1576.154
 
 **Price mean**
+
 ```{r}
 price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
 print(price_mean)
 ```
+
 **Mean Price Per Unit**
 
 > Small Harvests
+
 ```{r}
 harvest_mean <- mean(avocado_data$Harvested.Acres, na.rm = TRUE)
 small_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres < harvest_mean)
 small_harvest_price_mean <- mean(small_harvest$Price.P.U, na.rm = TRUE)
 print(small_harvest_price_mean)
 ```
+
 > Large Harvests
+
 ```{r}
 large_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres > harvest_mean)
 large_harvest_price_mean <- mean(large_harvest$Price.P.U, na.rm = TRUE)
 print(large_harvest_price_mean)
 ```
 
-> The amount of acres being harvested does not affect the price per unit of avocados 
+> The amount of acres being harvested does not affect the price per unit of avocados
 
 **t-test**
+
 ```{r}
 t.test(x = avocado_data$Price.P.U, mu = small_harvest_price_mean)
 
 t.test(x = avocado_data$Price.P.U, mu = large_harvest_price_mean)
 ```
-
-
-
-
 
 ## Linear Regression Model
 
@@ -189,4 +209,5 @@ t.test(x = avocado_data$Price.P.U, mu = large_harvest_price_mean)
 acres_production_lm <- lm(Harvested.Acres ~ Production, data = avocado_data)
 summary(acres_production_lm)
 ```
+
 **Must Generate Plots to visualize regression**
