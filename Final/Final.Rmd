@@ -19,7 +19,7 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 
 ```{r echo=FALSE, message=FALSE }
 # add packages you need for this assignment
-install.packages('ggplot2')
+install.packages("ggplot2", repos = "http://cran.us.r-project.org")
 ```
 
 ```{r setup, include=FALSE}
@@ -141,18 +141,6 @@ col = "darkmagenta", freq = FALSE)
 
 ```{r}
 
-```
-
-**Price P/U**
-
-```{r}
-hist(avocado_data$Price.P.U)
-```
-
-**Value**
-
-```{r}
-hist(avocado_data$Value)
 ```
 
 ## Boxplot
