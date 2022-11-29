@@ -41,83 +41,13 @@ summary(avocado_data)
 ```
 
 ## Missing values
-
-**Year**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Year))
-sum(is.na(avocado_data$Year))
-```
-
-**Commodity Code**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Commodity.Code))
-sum(is.na(avocado_data$Commodity.Code))
-```
-
-**Crop Name**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Crop.Name))
-sum(is.na(avocado_data$Crop.Name))
-```
-
-**County Code**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$County.Code))
-sum(is.na(avocado_data$County.Code))
-```
-
-**County**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$County))
-sum(is.na(avocado_data$County))
-```
-
-**Harvest Acres**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Harvested.Acres))
-sum(is.na(avocado_data$Harvested.Acres))
-```
-
-**Yield**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Yield))
-sum(is.na(avocado_data$Yield))
-```
-
-**Production**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Production))
-sum(is.na(avocado_data$Production))
-```
-
-**Price.Pu**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Price.P.U))
-sum(is.na(avocado_data$Price.P.U))
-```
-
-**Value**
-
-```{r echo=FALSE}
-which(is.na(avocado_data$Value))
-sum(is.na(avocado_data$Value))
-```
-
 **TOTAL**
 
 ```{r}
 which(is.na(avocado_data))
 sum(is.na(avocado_data))
 ```
+
 
 ## Histogram
 
