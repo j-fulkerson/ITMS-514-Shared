@@ -109,12 +109,17 @@ sum(is.na(avocado_data))
 
 **Harvested Acres**
 ```{r}
-hist(avocado_data$Harvested.Acres)
+harvested_acres <- avocado_data$Harvested.Acres
+h1 <- hist(harvested_acres, col = "blue")
+text(h1$mids, h1$counts, labels = h1$counts, adj = c(0.5, -0.5))
 ```
 
 **Yield**
 ```{r}
-hist(avocado_data$Yield)
+hist(avocado_data$Yield, ylim = c(0, .3), main = "Hist of Yield Density",
+xlab = "Yield", xlim = c(0, 10), 
+col = "darkmagenta", freq = FALSE)
+
 ```
 **Production**
 ```{r}
@@ -127,6 +132,14 @@ hist(avocado_data$Price.P.U)
 **Value**
 ```{r}
 hist(avocado_data$Value)
+```
+
+## Boxplot
+```{r}
+boxplot(Production ~ Year, data = avocado_data, col = "orange", main =
+"Production of Avocados per Year", xlab = "Year", ylab =
+"Produced Avocados")
+
 ```
 
 
