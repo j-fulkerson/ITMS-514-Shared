@@ -19,8 +19,8 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 
 ```{r echo=FALSE, message=FALSE }
 # add packages you need for this assignment
-# install.packages("ggplot2", repos = "http://cran.us.r-project.org")
-library(ggplot2)
+install.packages("ggplot2", dependencies = TRUE)
+library("ggplot2")
 ```
 
 ```{r setup, include=FALSE}
@@ -57,6 +57,8 @@ sum(is.na(avocado_data))
 harvested_acres <- avocado_data$Harvested.Acres
 h1 <- hist(harvested_acres, col = "blue")
 text(h1$mids, h1$counts, labels = h1$counts, adj = c(0.5, -0.5))
+
+
 ```
 
 **Yield**
@@ -70,8 +72,12 @@ col = "darkmagenta", freq = FALSE)
 **Production**
 
 ```{r}
-ggplot(avocado_data, aes(x = values, fill = group)) +
-  geom_histogram(position = "identity", alpha = 0.2, bins = 50)
+data_1 <- (rnorm(avocado_data$Harvested.Acres))
+data_2 <- (rnorm(avocado_data$County))
+Histogram_1 <- hist( data_1, plot = FALSE)
+Histogram_2 <- hist( data_2, plot = FALSE)
+plot (Histogram_1, col = rgb(1,0,0,0.4),xlab = 'Observations',freq = FALSE, main = 'Comparative Histogram')
+plot (Histogram_2, xaxt = County, yaxt = Harvested.Acres,col = rgb(0,0,1,0.4), add = TRUE, freq = FALSE)
 ```
 
 ## Boxplot
