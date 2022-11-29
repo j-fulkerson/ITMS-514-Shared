@@ -138,7 +138,7 @@ hist(avocado_data$Value)
 price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
 print(price_mean)
 ```
-**Price Mean for small and large harvests**
+**Mean Price Per Unit for small and large harvests**
 ```{r}
 harvest_mean <- mean(avocado_data$Harvested.Acres, na.rm = TRUE)
 small_harvest <- subset.data.frame(avocado_data, avocado_data$Harvested.Acres < harvest_mean)
