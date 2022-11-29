@@ -17,10 +17,6 @@ This data could be used to practice data visualization, data cleaning, forecasti
 
 The data is from USDA's National Agricultural Statistics Service California Field Office (Part of the Pacific Regional Field Office).
 
-```{r echo=FALSE, message=FALSE }
-
-```
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
