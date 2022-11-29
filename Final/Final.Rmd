@@ -21,6 +21,7 @@ The data is from USDA's National Agricultural Statistics Service California Fiel
 # add packages you need for this assignment
 # install.packages("ggplot2", repos = "http://cran.us.r-project.org")
 library(ggplot2)
+library(tidyverse)
 ```
 
 ```{r setup, include=FALSE}
@@ -137,3 +138,5 @@ summary(acres_production_regression)
 ```{r}
 abline(acres_production_regression, col = "blue")
 ```
+
+> Conclusion: Null hypothesis is rejected and the alternative is true because the mean price per unit for small harvests does not reflect the price of the total population
