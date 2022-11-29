@@ -139,6 +139,7 @@ price_mean <- mean(avocado_data$Price.P.U, na.rm = TRUE)
 print(price_mean)
 ```
 **Mean Price Per Unit**
+
 > Small Harvests
 ```{r}
 harvest_mean <- mean(avocado_data$Harvested.Acres, na.rm = TRUE)

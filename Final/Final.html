@@ -497,14 +497,19 @@ California Field Office (Part of the Pacific Regional Field Office).</p>
 <pre class="r"><code>price_mean &lt;- mean(avocado_data$Price.P.U, na.rm = TRUE)
 print(price_mean)</code></pre>
 <pre><code>[1] 1576.154</code></pre>
-<p><strong>Price Mean for small and large harvests</strong></p>
+<p><strong>Mean Price Per Unit</strong> &gt; Small Harvests</p>
 <pre class="r"><code>harvest_mean &lt;- mean(avocado_data$Harvested.Acres, na.rm = TRUE)
 small_harvest &lt;- subset.data.frame(avocado_data, avocado_data$Harvested.Acres &lt; harvest_mean)
 small_harvest_price_mean &lt;- mean(small_harvest$Price.P.U, na.rm = TRUE)
 print(small_harvest_price_mean)</code></pre>
 <pre><code>[1] 1488.728</code></pre>
+<blockquote>
+<p>Large Harvests</p>
+</blockquote>
 <pre class="r"><code>large_harvest &lt;- subset.data.frame(avocado_data, avocado_data$Harvested.Acres &gt; harvest_mean)
-large_harvest_price_mean &lt;- mean(large_harvest$Price.P.U, na.rm = TRUE)</code></pre>
+large_harvest_price_mean &lt;- mean(large_harvest$Price.P.U, na.rm = TRUE)
+print(large_harvest_price_mean)</code></pre>
+<pre><code>[1] 1726.285</code></pre>
 <blockquote>
 <p>The amount of acres being harvested does not affect the price per
 unit of avocados</p>
