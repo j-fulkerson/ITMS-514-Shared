@@ -63,11 +63,11 @@ col = "darkmagenta", freq = FALSE)
 ## Overlay Histogram
 ```{r}
 data_1 <- (rnorm(avocado_data$Harvested.Acres))
-data_2 <- (rnorm(avocado_data$County))
+data_2 <- (rnorm(avocado_data$Price.P.U))
 Histogram_1 <- hist( data_1, plot = FALSE)
 Histogram_2 <- hist( data_2, plot = FALSE)
-plot (Histogram_1, col = rgb(1,0,0,0.4),xlab = 'Observations',freq = FALSE, main = 'Comparative Histogram')
-plot (Histogram_2, xaxt = County, yaxt = Harvested.Acres,col = rgb(0,0,1,0.4), add = TRUE, freq = FALSE)
+plot (Histogram_1, col = rgb(1,0,0,0.4),xlab = 'Observations',freq = FALSE, main = "Price P.U. Overlayed with Harvested Acres")
+plot (Histogram_2, xaxt = Year, yaxt = Harvested.Acres,col = rgb(0,0,1,0.4), add = TRUE, freq = FALSE)
 ```
 
 
