@@ -80,7 +80,8 @@ main = "Boxplot of Yield per Year", xlab = "Yield", ylab =
 
 
 ## Hypothesis Test
-> H0: μ = 1576.154 Ha: μ ≠ 1576.154
+> H0: μ = 1488.728 Ha: μ ≠ 1488.728
+> H0: μ = 1726.285 Ha: μ ≠ 1726.285
 > Null Hypothesis: The amount of acres being harvested does not affect the price per unit of avocados
 **Price mean**
 ```{r}
