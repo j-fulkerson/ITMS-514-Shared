@@ -114,10 +114,6 @@ t.test(x = avocado_data$Price.P.U, mu = large_harvest_price_mean)
 
 
 ## Linear Regression Model
-**Plot**
-```{r}
-plot(avocado_data$Harvested.Acres, avocado_data$Production)
-```
 **Linear Regression Model**
 ```{r}
 acres_production_regression <- lm(Production ~ Harvested.Acres,
@@ -126,5 +122,6 @@ summary(acres_production_regression)
 ```
 **Linear Regression Plotted**
 ```{r}
+plot(avocado_data$Harvested.Acres, avocado_data$Production)
 abline(acres_production_regression, col = "blue")
 ```
