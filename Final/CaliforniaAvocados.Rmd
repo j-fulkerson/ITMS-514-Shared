@@ -73,9 +73,9 @@ plot (Histogram_2, xaxt = County, yaxt = Harvested.Acres,col = rgb(0,0,1,0.4), a
 
 ## Boxplot
 ```{r}
-boxplot(Production ~ Year, data = avocado_data, col = "orange",
-main = "Production of Avocados per Year", xlab = "Year", ylab =
-"Produced Avocados")
+boxplot(Yield ~ Year, data = avocado_data, col = "red",
+main = "Boxplot of Yield per Year", xlab = "Yield", ylab =
+"Year", horizontal = TRUE)
 ```
 
 
